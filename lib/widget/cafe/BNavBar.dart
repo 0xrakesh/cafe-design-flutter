@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
-class BNavBar extends StatelessWidget {
-  const BNavBar({super.key});
+class BNavbar extends StatelessWidget {
+  final int index;
+  final ValueChanged<int> onItemTap;
+
+  const BNavbar({super.key, required this.index, required this.onItemTap});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +29,27 @@ class BNavBar extends StatelessWidget {
               backgroundColor: Colors.transparent,
             ),
             child: NavigationBar(
+              onDestinationSelected: (int index) {
+                onItemTap(index);
+              },
               height: 70,
-              selectedIndex: 0,
+              selectedIndex: index,
               destinations: const [
-                HugeIcon(icon: HugeIcons.strokeRoundedStore01, color: Colors.white),
-                HugeIcon(icon: HugeIcons.strokeRoundedCalendar01, color: Colors.white),
-                HugeIcon(icon: HugeIcons.strokeRoundedGift, color: Colors.white),
-                HugeIcon(icon: HugeIcons.strokeRoundedUser, color: Colors.white)
+                NavigationDestination(
+                    selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedStore01, color: Colors.black),
+                    icon: HugeIcon(icon: HugeIcons.strokeRoundedStore01, color: Colors.white),
+                    label: "",
+                ),
+                NavigationDestination(
+                  icon: HugeIcon(icon: HugeIcons.strokeRoundedCalendar01, color: Colors.white),
+                  selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedCalendar01, color: Colors.black),
+                  label: "",
+                ),
+                NavigationDestination(
+                  icon: HugeIcon(icon: HugeIcons.strokeRoundedUser, color: Colors.white),
+                  selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedUser, color: Colors.black),
+                  label: "",
+                ),
               ],
             ),
           ),

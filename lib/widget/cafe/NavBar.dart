@@ -25,7 +25,7 @@ class NavBar extends StatelessWidget {
               ))
             ],
           ),
-          HugeIcon(icon: HugeIcons.strokeRoundedNotification03, color: Colors.black)
+          HugeIcon(icon: HugeIcons.strokeRoundedNotification01, color: Colors.black)
         ],
     );
   }

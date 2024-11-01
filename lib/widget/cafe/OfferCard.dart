@@ -16,7 +16,7 @@ class OfferCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(14),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Expanded(
                   child: Column(
@@ -62,10 +62,10 @@ class OfferCard extends StatelessWidget {
                         width: 120,
                         height: double.infinity,
                       ),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Image.asset(
                         "assets/images/card.png",
-                        width: 160,
+                        width: 190,
                       ),
                     ],
                   )
